@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Build files
+build/
+*.o
+*.obj
+*.exe
+*.class
+
+# Temporary and log files
+*.log
+*.tmp
+*.bak

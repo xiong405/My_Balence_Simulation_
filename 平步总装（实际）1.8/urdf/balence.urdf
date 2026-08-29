@@ -1,0 +1,1001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="平步总装（实际）1.8">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00110957694439339 -0.000248676924748788 -0.00331210296438389"
+        rpy="0 0 0" />
+      <mass
+        value="4.2591013632059" />
+      <inertia
+        ixx="0.00491958790781735"
+        ixy="6.53857216788658E-07"
+        ixz="3.47483536146155E-05"
+        iyy="0.00869665552061893"
+        iyz="9.216899111229E-07"
+        izz="0.00899808113247028" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_calf-link">
+    <inertial>
+      <origin
+        xyz="0.0341525895705669 0.00363569351093679 0.00141652936127346"
+        rpy="0 0 0" />
+      <mass
+        value="0.131394912492738" />
+      <inertia
+        ixx="3.34769171962078E-05"
+        ixy="-7.62156946021845E-06"
+        ixz="6.44005635320377E-07"
+        iyy="0.000104260253118481"
+        iyz="6.85572350450412E-08"
+        izz="0.000135064605719726" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_calf-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left_calf-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-calf-joint"
+    type="continuous">
+    <origin
+      xyz="0.000779183760026896 0.180141837549994 0.0282815676508122"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_calf-link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-Link rod-1">
+    <inertial>
+      <origin
+        xyz="-0.0469845230251573 0.0309276105785502 -0.0204718373530218"
+        rpy="0 0 0" />
+      <mass
+        value="0.0682128059788388" />
+      <inertia
+        ixx="2.18209172343661E-05"
+        ixy="2.49477358527121E-05"
+        ixz="5.54368223385282E-20"
+        iyy="4.32990777251387E-05"
+        iyz="-3.66810381659002E-20"
+        izz="5.75366010960237E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-Link rod-1"
+    type="continuous">
+    <origin
+      xyz="0.0939690460503174 0.0100034186353128 0.0202750000000052"
+      rpy="0 0 0" />
+    <parent
+      link="left_calf-link" />
+    <child
+      link="left-Link rod-1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left-Link rod-2">
+    <inertial>
+      <origin
+        xyz="-0.0749477170540701 -0.0546014242915734 -0.0110142355101124"
+        rpy="0 0 0" />
+      <mass
+        value="0.150783211241724" />
+      <inertia
+        ixx="8.71453023230527E-05"
+        ixy="-9.71914626007369E-05"
+        ixz="4.30265461582114E-17"
+        iyy="0.0001364142205589"
+        iyz="-1.15947335254109E-17"
+        izz="0.00022189505481716" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-Link rod-2"
+    type="continuous">
+    <origin
+      xyz="-0.0939690460503139 0.0618552211571006 0"
+      rpy="0 0 0" />
+    <parent
+      link="left-Link rod-1" />
+    <child
+      link="left-Link rod-2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left-Link rod-4">
+    <inertial>
+      <origin
+        xyz="-0.0574255281418602 0.00611320027713935 -0.00777192641996444"
+        rpy="0 0 0" />
+      <mass
+        value="0.0717624699261372" />
+      <inertia
+        ixx="6.17041411226746E-06"
+        ixy="6.39315367863648E-06"
+        ixz="-4.50571952478168E-20"
+        iyy="6.55451592764754E-05"
+        iyz="3.72698810235519E-21"
+        izz="6.4072909736982E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-Link rod-4"
+    type="continuous">
+    <origin
+      xyz="-0.137162452686073 -0.110428152128969 0.00612500000000044"
+      rpy="0 0 0" />
+    <parent
+      link="left-Link rod-2" />
+    <child
+      link="left-Link rod-4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-Link rod-5">
+    <inertial>
+      <origin
+        xyz="0.103102685209187 0.0854404712238931 -0.0198753929988612"
+        rpy="0 0 0" />
+      <mass
+        value="0.285699239134672" />
+      <inertia
+        ixx="0.000615291310851632"
+        ixy="-0.000787581905602118"
+        ixz="-5.6635714133462E-07"
+        iyy="0.00122168207055877"
+        iyz="-3.44079200776367E-07"
+        izz="0.00181769886296001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.223529411764706 0.223529411764706 0.223529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-Link rod-5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-Link rod-5"
+    type="continuous">
+    <origin
+      xyz="-0.11485105628372 0.0122264005542786 0"
+      rpy="0 0 0" />
+    <parent
+      link="left-Link rod-4" />
+    <child
+      link="left-Link rod-5" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-wheel">
+    <inertial>
+      <origin
+        xyz="-8.35169584202801E-06 0.000135326664463808 -0.0104188047507985"
+        rpy="0 0 0" />
+      <mass
+        value="0.402227672586562" />
+      <inertia
+        ixx="0.000281270982848133"
+        ixy="6.15510226570845E-07"
+        ixz="1.99746239146037E-07"
+        iyy="0.000282150323752788"
+        iyz="3.78905262560146E-07"
+        izz="0.000538806688305668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-wheel-joint"
+    type="continuous">
+    <origin
+      xyz="0.252013508969789 0.186028977987639 0.0204553441982633"
+      rpy="0 0 0" />
+    <parent
+      link="left-Link rod-5" />
+    <child
+      link="left-wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-thigh-link">
+    <inertial>
+      <origin
+        xyz="-0.0545342724849003 0.00414443464985553 -0.0155224628439509"
+        rpy="0 0 0" />
+      <mass
+        value="0.64518251248755" />
+      <inertia
+        ixx="0.000281819120521556"
+        ixy="8.05225133686249E-05"
+        ixz="-8.23263506877064E-08"
+        iyy="0.00107747285080033"
+        iyz="5.60249640252588E-07"
+        izz="0.00125702088079024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-thigh-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.223529411764706 0.223529411764706 0.223529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-thigh-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-thigh-joint"
+    type="continuous">
+    <origin
+      xyz="0.000779183760026896 0.180141837549994 0.0282815676508122"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left-thigh-link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_calf-link">
+    <inertial>
+      <origin
+        xyz="0.0341525895705666 -0.0036356935109369 -0.0269271495225878"
+        rpy="0 0 0" />
+      <mass
+        value="0.131394912492739" />
+      <inertia
+        ixx="3.34769171961717E-05"
+        ixy="7.62156946023607E-06"
+        ixz="-6.44005635322997E-07"
+        iyy="0.000104260253118517"
+        iyz="6.8557235049146E-08"
+        izz="0.000135064605719726" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_calf-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right_calf-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_calf-joint"
+    type="continuous">
+    <origin
+      xyz="0.000779183760026851 -0.209108162449999 0.0282815676508123"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_calf-link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-Link rod-1">
+    <inertial>
+      <origin
+        xyz="-0.0469845230251576 -0.0309276105785499 -0.020471837353022"
+        rpy="0 0 0" />
+      <mass
+        value="0.0682128059788387" />
+      <inertia
+        ixx="2.18209172343661E-05"
+        ixy="-2.49477358527121E-05"
+        ixz="-2.09771975384376E-19"
+        iyy="4.32990777251387E-05"
+        iyz="-1.3587736734424E-19"
+        izz="5.75366010960237E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-Link rod-1"
+    type="continuous">
+    <origin
+      xyz="0.0939690460503174 -0.0100034186353132 -0.00747500000000006"
+      rpy="0 0 0" />
+    <parent
+      link="right_calf-link" />
+    <child
+      link="right-Link rod-1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right-Link rod-2">
+    <inertial>
+      <origin
+        xyz="-0.0749477170540727 0.0546014242915816 -0.0110142355101124"
+        rpy="0 0 0" />
+      <mass
+        value="0.150783211241724" />
+      <inertia
+        ixx="8.71453023226342E-05"
+        ixy="9.71914626010087E-05"
+        ixz="8.67893510106423E-17"
+        iyy="0.000136414220559318"
+        iyz="4.73659262006142E-17"
+        izz="0.00022189505481716" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-Link rod-2"
+    type="continuous">
+    <origin
+      xyz="-0.0939690460503152 -0.0618552211570998 0"
+      rpy="0 0 0" />
+    <parent
+      link="right-Link rod-1" />
+    <child
+      link="right-Link rod-2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right-Link rod-4">
+    <inertial>
+      <origin
+        xyz="-0.0574255281418608 -0.00611320027713963 -0.00777192641996527"
+        rpy="0 0 0" />
+      <mass
+        value="0.0717624699261372" />
+      <inertia
+        ixx="6.17041411226746E-06"
+        ixy="-6.39315367863649E-06"
+        ixz="-2.74636039306837E-19"
+        iyy="6.55451592764755E-05"
+        iyz="-3.23052398293394E-20"
+        izz="6.40729097369821E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-Link rod-4"
+    type="continuous">
+    <origin
+      xyz="-0.137162452686071 0.110428152128969 0.0061250000000016"
+      rpy="0 0 0" />
+    <parent
+      link="right-Link rod-2" />
+    <child
+      link="right-Link rod-4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-Link rod-5">
+    <inertial>
+      <origin
+        xyz="0.112434616761844 -0.0919598554944376 -0.0194161905479681"
+        rpy="0 0 0" />
+      <mass
+        value="0.375184649415137" />
+      <inertia
+        ixx="0.000904883841183168"
+        ixy="0.00116811986809399"
+        ixz="-9.38314679701614E-07"
+        iyy="0.00180539886648149"
+        iyz="5.76715190318461E-07"
+        izz="0.00268786737489711" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-Link rod-5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-Link rod-5"
+    type="continuous">
+    <origin
+      xyz="-0.11485105628372 -0.012226400554279 0"
+      rpy="0 0 0" />
+    <parent
+      link="right-Link rod-4" />
+    <child
+      link="right-Link rod-5" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-wheel">
+    <inertial>
+      <origin
+        xyz="-2.63633140658373E-05 0.000193352966112004 -0.0104273897002888"
+        rpy="0 0 0" />
+      <mass
+        value="0.399779234408464" />
+      <inertia
+        ixx="0.00028090209250519"
+        ixy="-1.58805317683452E-07"
+        ixz="-4.10045527906328E-08"
+        iyy="0.000282381205505322"
+        iyz="4.26364145669958E-07"
+        izz="0.000538798199053822" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-wheel-joint"
+    type="continuous">
+    <origin
+      xyz="0.252013508969789 -0.186028977987643 0.0204553441982621"
+      rpy="0 0 0" />
+    <parent
+      link="right-Link rod-5" />
+    <child
+      link="right-wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-thigh-link">
+    <inertial>
+      <origin
+        xyz="-0.054864975141786 -0.00418319961436286 -0.0441921956852102"
+        rpy="0 0 0" />
+      <mass
+        value="0.646568394042436" />
+      <inertia
+        ixx="0.000282038414045766"
+        ixy="-8.05225133686246E-05"
+        ixz="-8.23263506936161E-08"
+        iyy="0.00107769214432454"
+        iyz="-5.60249640253916E-07"
+        izz="0.00125745854391763" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-thigh-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.223529411764706 0.223529411764706 0.223529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-thigh-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-thigh-joint"
+    type="continuous">
+    <origin
+      xyz="0.000779183760026851 -0.209108162449999 0.0282815676508123"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right-thigh-link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-calf gear">
+    <inertial>
+      <origin
+        xyz="1.52558721710772E-05 0 -0.00451102246599022"
+        rpy="0 0 0" />
+      <mass
+        value="0.0696586614906443" />
+      <inertia
+        ixx="2.17394085871478E-05"
+        ixy="6.22229351656439E-20"
+        ixz="5.2486694613929E-09"
+        iyy="2.17536534227864E-05"
+        iyz="-2.59093024321711E-20"
+        izz="3.96969928281949E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-calf gear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-calf gear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-calf gear-joint"
+    type="fixed">
+    <origin
+      xyz="0.10039 -0.15986 0.0082816"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right-calf gear" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right-thigh gear">
+    <inertial>
+      <origin
+        xyz="4.50664760920372E-06 3.73194308034286E-06 -0.00142841168057753"
+        rpy="0 0 0" />
+      <mass
+        value="0.0436197364771032" />
+      <inertia
+        ixx="1.35992363121125E-05"
+        ixy="-1.68179062423111E-09"
+        ixz="6.92269576736439E-10"
+        iyy="1.35998745349489E-05"
+        iyz="5.73266622439523E-10"
+        izz="2.66883909493665E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-thigh gear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/right-thigh gear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-thigh gear-joint"
+    type="fixed">
+    <origin
+      xyz="-0.098833 -0.15136 0.0082816"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right-thigh gear" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left-thigh gear">
+    <inertial>
+      <origin
+        xyz="1.49225583373491E-06 -5.65777733696482E-06 -0.00142841168058183"
+        rpy="0 0 0" />
+      <mass
+        value="0.0436197364771034" />
+      <inertia
+        ixx="1.36010445471651E-05"
+        ixy="8.44252688953836E-10"
+        ixz="2.29226556850262E-10"
+        iyy="1.35980662998964E-05"
+        iyz="-8.69095491244087E-10"
+        izz="2.66883909493666E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-thigh gear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-thigh gear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-thigh gear-joint"
+    type="continuous">
+    <origin
+      xyz="-0.098833 0.15114 0.0082816"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left-thigh gear" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left-calf gear">
+    <inertial>
+      <origin
+        xyz="9.12707364845999E-06 1.22244902743818E-05 -0.00451102246599241"
+        rpy="0 0 0" />
+      <mass
+        value="0.0696586614906444" />
+      <inertia
+        ixx="2.17485548752819E-05"
+        ixy="-6.82882014263133E-09"
+        ixz="3.1401018690215E-09"
+        iyy="2.17445071346522E-05"
+        iyz="4.20574504304309E-09"
+        izz="3.96969928281949E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-calf gear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/left-calf gear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-calf gear-joint"
+    type="continuous">
+    <origin
+      xyz="0.100391231224177 0.159641837549999 0.00828156765081262"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left-calf gear" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
