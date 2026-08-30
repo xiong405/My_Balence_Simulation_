@@ -8,8 +8,8 @@ WorldInfo {
   basicTimeStep 4
 }
 Viewpoint {
-  orientation 0.13209678497779562 0.1243143268614053 -0.9834105894973503 1.6481477825182036
-  position -0.08938429033831749 0.9415013375265399 0.32194390705479414
+  orientation -0.07819227366197633 -0.08026143761383103 0.9937022038678045 4.73222457527544
+  position -0.026419866888246397 0.8510237629572766 0.3090466266200773
 }
 TexturedBackground {
 }
@@ -22,6 +22,12 @@ RectangleArena {
 Robot {
   translation 0 0 0.2
   children [
+    InertialUnit {
+    }
+    Accelerometer {
+    }
+    Gyro {
+    }
     Shape {
       appearance DEF base_link_material PBRAppearance {
         roughness 1
@@ -41,16 +47,16 @@ Robot {
       }
       device [
         RotationalMotor {
-          name "left-calf-joint"
-          maxTorque 10000
+          name "Left_Front_Motor"
+          maxTorque 25
         }
         PositionSensor {
-          name "left-calf-joint_sensor"
+          name "Left_Front_Motor_Sensor"
         }
       ]
       endPoint Solid {
         translation 0.000779 0.180142 0.028282
-        rotation -1 0 0 1.570796
+        rotation -1 2.9947141937884126e-22 5.989428387576825e-22 1.5707959999999996
         children [
           Shape {
             appearance DEF left_calf-link_material PBRAppearance {
@@ -153,11 +159,11 @@ Robot {
                                     }
                                     device [
                                       RotationalMotor {
-                                        name "left-wheel-joint"
-                                        maxTorque 10000
+                                        name "Left_Wheel"
+                                        maxTorque 50
                                       }
                                       PositionSensor {
-                                        name "left-wheel-joint_sensor"
+                                        name "Left_Wheel_Sensor"
                                       }
                                     ]
                                     endPoint Solid {
@@ -215,7 +221,7 @@ Robot {
                                 }
                                 physics Physics {
                                   density -1
-                                  mass 0.285699
+                                  mass 0.279316
                                   centerOfMass [
                                     0.103103 0.08544 -0.019875
                                   ]
@@ -329,21 +335,21 @@ Robot {
       }
       device [
         RotationalMotor {
-          name "left-thigh-joint"
-          maxTorque 10000
+          name "Left_Back_Motor"
+          maxTorque 25
         }
         PositionSensor {
-          name "left-thigh-joint_sensor"
+          name "Left_Back_Motor_Sensor"
         }
       ]
       endPoint Solid {
         translation 0.000779 0.180142 0.028282
-        rotation -1 0 0 1.570796
+        rotation -1 -1.497357096894207e-22 1.497357096894207e-22 1.570795999999999
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 1
-              anchor -0.03 0.061855 0
+              anchor -0.0939689 0.010005 0
             }
             endPoint SolidReference {
               solidName "left-Link rod-2"
@@ -352,7 +358,7 @@ Robot {
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 -1
-              anchor 0.1 0 0
+              anchor -0.20882 0.0222334 0
             }
             endPoint SolidReference {
               solidName "left-Link rod-5"
@@ -401,16 +407,16 @@ Robot {
       }
       device [
         RotationalMotor {
-          name "right_calf-joint"
-          maxTorque 10000
+          name "Right_Front_Motor"
+          maxTorque 25
         }
         PositionSensor {
-          name "right_calf-joint_sensor"
+          name "Right_Front_Motor_Sensor"
         }
       ]
-      endPoint DEF R1 Solid {
+      endPoint Solid {
         translation 0.000779 -0.209108 0.028282
-        rotation 1 0 0 1.570796
+        rotation 1 5.989428387576825e-22 1.197885677515365e-21 1.5707959999999994
         children [
           Shape {
             appearance DEF right_calf-link_material PBRAppearance {
@@ -513,11 +519,11 @@ Robot {
                                     }
                                     device [
                                       RotationalMotor {
-                                        name "right-wheel-joint"
-                                        maxTorque 10000
+                                        name "Right_Wheel"
+                                        maxTorque 50
                                       }
                                       PositionSensor {
-                                        name "right-wheel-joint_sensor"
+                                        name "Right_Wheel_Sensor"
                                       }
                                     ]
                                     endPoint Solid {
@@ -575,7 +581,7 @@ Robot {
                                 }
                                 physics Physics {
                                   density -1
-                                  mass 0.375185
+                                  mass 0.279316
                                   centerOfMass [
                                     0.112435 -0.09196 -0.019416
                                   ]
@@ -689,21 +695,21 @@ Robot {
       }
       device [
         RotationalMotor {
-          name "right-thigh-joint"
-          maxTorque 10000
+          name "Right_Back_Motor"
+          maxTorque 25
         }
         PositionSensor {
-          name "right-thigh-joint_sensor"
+          name "Right_Back_Motor_Sensor"
         }
       ]
       endPoint Solid {
         translation 0.000779 -0.209108 0.028282
-        rotation 1 0 0 1.570796
+        rotation 1 5.989428387576826e-22 -1.1978856775153652e-21 1.570796
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 1
-              anchor -0.093969 -0.061855 0
+              anchor -0.0939689 -0.010005 0
             }
             endPoint SolidReference {
               solidName "right-Link rod-2"
@@ -712,7 +718,7 @@ Robot {
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 -1
-              anchor -0.114851 -0.012226 0
+              anchor -0.20882 -0.0222334 0
             }
             endPoint SolidReference {
               solidName "right-Link rod-5"
@@ -750,196 +756,6 @@ Robot {
           inertiaMatrix [
             0.0002820384 0.001077692 0.001257459
             -8.052251e-05 -8.232635e-08 -5.602496e-07
-          ]
-        }
-      }
-    }
-    Solid {
-      translation 0.10039 -0.15986 0.008282
-      rotation 1 0 0 1.5708
-      children [
-        Shape {
-          appearance DEF right-calf_gear_material PBRAppearance {
-            baseColor 0.898039 0.917647 0.929412
-            roughness 1
-            metalness 0
-          }
-          geometry DEF right-calf_gear Mesh {
-            url [
-              "../meshes/right-calf gear.STL"
-            ]
-          }
-        }
-      ]
-      name "right-calf gear"
-      boundingObject Pose {
-        translation 0 0 -0.00645
-        children [
-          Cylinder {
-            height 0.0214
-            radius 0.04293
-            subdivision 20
-          }
-        ]
-      }
-      physics Physics {
-        density -1
-        mass 0.069659
-        centerOfMass [
-          1.5e-05 0 -0.004511
-        ]
-        inertiaMatrix [
-          2.173941e-05 2.175365e-05 3.969699e-05
-          6.222294e-20 5.248669e-09 -2.59093e-20
-        ]
-      }
-    }
-    Solid {
-      translation -0.098833 -0.15136 0.008282
-      rotation 1 0 0 1.5708
-      children [
-        Shape {
-          appearance DEF right-thigh_gear_material PBRAppearance {
-            baseColor 0.898039 0.917647 0.929412
-            roughness 1
-            metalness 0
-          }
-          geometry DEF right-thigh_gear Mesh {
-            url [
-              "../meshes/right-thigh gear.STL"
-            ]
-          }
-        }
-      ]
-      name "right-thigh gear"
-      boundingObject Pose {
-        translation 0 0 -0.0024
-        children [
-          Cylinder {
-            height 0.0123
-            radius 0.04302
-            subdivision 20
-          }
-        ]
-      }
-      physics Physics {
-        density -1
-        mass 0.04362
-        centerOfMass [
-          5e-06 4e-06 -0.001428
-        ]
-        inertiaMatrix [
-          1.359924e-05 1.359987e-05 2.668839e-05
-          -1.681791e-09 6.922696e-10 5.732666e-10
-        ]
-      }
-    }
-    HingeJoint {
-      jointParameters HingeJointParameters {
-        axis 0 1 -4e-06
-        anchor -0.098833 0.15114 0.008282
-      }
-      device [
-        RotationalMotor {
-          name "left-thigh gear-joint"
-          maxTorque 10000
-        }
-        PositionSensor {
-          name "left-thigh gear-joint_sensor"
-        }
-      ]
-      endPoint Solid {
-        translation -0.098833 0.15114 0.008282
-        rotation -1 0 0 1.5708
-        children [
-          Shape {
-            appearance DEF left-thigh_gear_material PBRAppearance {
-              baseColor 0.898039 0.917647 0.929412
-              roughness 1
-              metalness 0
-            }
-            geometry DEF left-thigh_gear Mesh {
-              url [
-                "../meshes/left-thigh gear.STL"
-              ]
-            }
-          }
-        ]
-        name "left-thigh gear"
-        boundingObject Pose {
-          translation 0 0 -0.0024
-          children [
-            Cylinder {
-              height 0.0123
-              radius 0.04302
-              subdivision 20
-            }
-          ]
-        }
-        physics Physics {
-          density -1
-          mass 0.04362
-          centerOfMass [
-            1e-06 -6e-06 -0.001428
-          ]
-          inertiaMatrix [
-            1.360104e-05 1.359807e-05 2.668839e-05
-            8.442527e-10 2.292266e-10 -8.690955e-10
-          ]
-        }
-      }
-    }
-    HingeJoint {
-      jointParameters HingeJointParameters {
-        axis 0 1 0
-        anchor 0.100391 0.159642 0.008282
-      }
-      device [
-        RotationalMotor {
-          name "left-calf gear-joint"
-          maxTorque 10000
-        }
-        PositionSensor {
-          name "left-calf gear-joint_sensor"
-        }
-      ]
-      endPoint Solid {
-        translation 0.100391 0.159642 0.008282
-        rotation -1 0 0 1.570796
-        children [
-          Shape {
-            appearance DEF left-calf_gear_material PBRAppearance {
-              baseColor 0.898039 0.917647 0.929412
-              roughness 1
-              metalness 0
-            }
-            geometry DEF left-calf_gear Mesh {
-              url [
-                "../meshes/left-calf gear.STL"
-              ]
-            }
-          }
-        ]
-        name "left-calf gear"
-        boundingObject Pose {
-          translation 0 0 -0.00645
-          children [
-            Cylinder {
-              height 0.0214
-              radius 0.04293
-              subdivision 20
-            }
-          ]
-        }
-        physics Physics {
-          density -1
-          mass 0.069659
-          centerOfMass [
-            9e-06 1.2e-05 -0.004511
-          ]
-          inertiaMatrix [
-            2.174855e-05 2.174451e-05 3.969699e-05
-            -6.82882e-09 3.140102e-09 4.205745e-09
           ]
         }
       }
