@@ -8,19 +8,18 @@ WorldInfo {
   basicTimeStep 4
 }
 Viewpoint {
-  orientation -0.07819227366197633 -0.08026143761383103 0.9937022038678045 4.73222457527544
-  position -0.026419866888246397 0.8510237629572766 0.3090466266200773
+  orientation 0.0464095838922443 0.045318527483791164 0.9978939731202157 4.6864326580171305
+  position -0.020572718107317138 1.1014769300988667 0.11073708937993385
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
-  translation 0 0 0.01
   floorSize 100 100
 }
 Robot {
-  translation 0 0 0.2
+  translation 0 0 0.1913
   children [
     InertialUnit {
     }
