@@ -5,11 +5,12 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 
 WorldInfo {
-  basicTimeStep 4
+  gravity 0
+  basicTimeStep 2
 }
 Viewpoint {
-  orientation 0.2438932106181162 0.2607614856299913 -0.9340875491229005 1.5720941688076149
-  position -0.12747994880301927 0.998886964666423 0.4645007784446118
+  orientation -0.1276570429640038 -0.08084928904406272 0.9885176133194371 4.892108763711107
+  position -0.24504111281100044 1.2359558701214994 0.3841931156400534
 }
 TexturedBackground {
 }
@@ -23,382 +24,94 @@ RectangleArena {
 Robot {
   translation 0 0 0.1913
   children [
-    InertialUnit {
-      name "imu"
+    Gyro {
     }
     Accelerometer {
     }
-    Gyro {
+    InertialUnit {
+      name "imu"
     }
     Shape {
-      appearance DEF base_link_material PBRAppearance {
+      appearance DEF base-link_material PBRAppearance {
+        baseColor 0.333333 1 0.498039
         roughness 1
         metalness 0
       }
-      geometry DEF base_link Mesh {
+      geometry DEF base-link Mesh {
         url [
-          "../meshes/base_link_visual_low.STL"
+          "../meshes/base-link_visual.obj"
         ]
       }
       castShadows FALSE
     }
-    DEF L1 HingeJoint {
+    DEF R2 HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
-        anchor 0.000779 0.180142 0.028282
+        anchor -0.00075 -0.201762 0.028527
       }
       device [
         RotationalMotor {
-          name "Left_Front_Motor"
+          name "Right_Back_Motor"
           maxTorque 25
         }
         PositionSensor {
-          name "Left_Front_Motor_Sensor"
+          name "Right_Back_Motor_Sensor"
         }
       ]
       endPoint Solid {
-        translation 0.000779 0.180142 0.028282
-        rotation -1 3.9252317880823494e-17 3.4345778145720555e-17 1.570795999999999
-        children [
-          Shape {
-            appearance DEF left_calf-link_material PBRAppearance {
-              baseColor 0.333333 0.333333 0.498039
-              roughness 1
-              metalness 0
-            }
-            geometry DEF left_calf-link Mesh {
-              url [
-                "../meshes/left_calf-link.STL"
-              ]
-            }
-          }
-          HingeJoint {
-            jointParameters HingeJointParameters {
-              axis 0 0 -1
-              anchor 0.093969 0.010003 0.020275
-            }
-            endPoint Solid {
-              translation 0.093969 0.010003 0.020275
-              rotation 0 0 -1 0
-              children [
-                Shape {
-                  appearance DEF left-Link_rod-1_material PBRAppearance {
-                    baseColor 0.333333 0 0.498039
-                    roughness 1
-                    metalness 0
-                  }
-                  geometry DEF left-Link_rod-1 Mesh {
-                    url [
-                      "../meshes/left-Link rod-1.STL"
-                    ]
-                  }
-                }
-                HingeJoint {
-                  jointParameters HingeJointParameters {
-                    axis 0 0 -1
-                    anchor -0.093969 0.061855 0
-                  }
-                  endPoint Solid {
-                    translation -0.093969 0.061855 0
-                    rotation 0 0 -1 0
-                    children [
-                      Shape {
-                        appearance DEF left-Link_rod-2_material PBRAppearance {
-                          baseColor 0.666667 0.333333 0
-                          roughness 1
-                          metalness 0
-                        }
-                        geometry DEF left-Link_rod-2 Mesh {
-                          url [
-                            "../meshes/left-Link rod-2.STL"
-                          ]
-                        }
-                      }
-                      HingeJoint {
-                        jointParameters HingeJointParameters {
-                          axis 0 0 -1
-                          anchor -0.137162 -0.110428 0.006125
-                        }
-                        endPoint Solid {
-                          translation -0.137162 -0.110428 0.006125
-                          rotation 0 0 -1 0
-                          children [
-                            Shape {
-                              appearance DEF left-Link_rod-4_material PBRAppearance {
-                                baseColor 1 0 0
-                                roughness 1
-                                metalness 0
-                              }
-                              geometry DEF left-Link_rod-4 Mesh {
-                                url [
-                                  "../meshes/left-Link rod-4.STL"
-                                ]
-                              }
-                            }
-                            HingeJoint {
-                              jointParameters HingeJointParameters {
-                                axis 0 0 -1
-                                anchor -0.114851 0.012226 0
-                              }
-                              endPoint Solid {
-                                translation -0.114851 0.012226 0
-                                rotation 0 0 -1 0
-                                children [
-                                  Shape {
-                                    appearance DEF left-Link_rod-5_material PBRAppearance {
-                                      baseColor 0.333333 0.666667 0.498039
-                                      roughness 1
-                                      metalness 0
-                                    }
-                                    geometry DEF left-Link_rod-5 Mesh {
-                                      url [
-                                        "../meshes/left-Link rod-5.STL"
-                                      ]
-                                    }
-                                  }
-                                  HingeJoint {
-                                    jointParameters HingeJointParameters {
-                                      axis 0 0 1
-                                      anchor 0.252014 0.186029 0.020455
-                                    }
-                                    device [
-                                      RotationalMotor {
-                                        name "Left_Wheel"
-                                        maxTorque 50
-                                      }
-                                      PositionSensor {
-                                        name "Left_Wheel_Sensor"
-                                      }
-                                    ]
-                                    endPoint Solid {
-                                      translation 0.252014 0.186029 0.020455
-                                      children [
-                                        Shape {
-                                          appearance DEF left-wheel_material PBRAppearance {
-                                            baseColor 0.333333 0.333333 1
-                                            roughness 1
-                                            metalness 0
-                                          }
-                                          geometry DEF left-wheel Mesh {
-                                            url [
-                                              "../meshes/left-wheel.STL"
-                                            ]
-                                          }
-                                          castShadows FALSE
-                                        }
-                                      ]
-                                      name "left-wheel"
-                                      boundingObject Pose {
-                                        translation 6e-06 -9.2e-05 -0.022455
-                                        children [
-                                          Cylinder {
-                                            height 0.0617
-                                            radius 0.05995
-                                            subdivision 24
-                                          }
-                                        ]
-                                      }
-                                      physics Physics {
-                                        density -1
-                                        mass 0.402228
-                                        centerOfMass [
-                                          -8e-06 0.000135 -0.010419
-                                        ]
-                                        inertiaMatrix [
-                                          0.000281271 0.0002821503 0.0005388067
-                                          6.155102e-07 1.997462e-07 3.789053e-07
-                                        ]
-                                      }
-                                    }
-                                  }
-                                ]
-                                name "left-Link rod-5"
-                                boundingObject Pose {
-                                  translation 0.131595 0.100834 -0.02625
-                                  rotation 0 0 1 0.634774
-                                  children [
-                                    Box {
-                                      size 0.359873 0.070613 0.041
-                                    }
-                                  ]
-                                }
-                                physics Physics {
-                                  density -1
-                                  mass 0.174732
-                                  centerOfMass [
-                                    0.118227 -0.10023 -0.019482
-                                  ]
-                                  inertiaMatrix [
-                                    -0.000473505 0.000879964 0.00134391
-                                    -0.000592039 -4.63707e-07 2.97042e-07
-                                  ]
-                                }
-                              }
-                            }
-                          ]
-                          name "left-Link rod-4"
-                          boundingObject Pose {
-                            translation -0.057426 0.006113 -0.015625
-                            rotation 0 0 1 -0.106034
-                            children [
-                              Box {
-                                size 0.133227 0.018002 0.03675
-                              }
-                            ]
-                          }
-                          physics Physics {
-                            density -1
-                            mass 0.071762
-                            centerOfMass [
-                              -0.057426 0.006113 -0.007772
-                            ]
-                            inertiaMatrix [
-                              6.170414e-06 6.554516e-05 6.407291e-05
-                              6.393154e-06 -4.50572e-20 3.726988e-21
-                            ]
-                          }
-                        }
-                      }
-                    ]
-                    name "left-Link rod-2"
-                    boundingObject Pose {
-                      translation -0.072549 -0.050054 -0.011125
-                      rotation 0 0 1 0.666961
-                      children [
-                        Box {
-                          size 0.200839 0.039742 0.0248
-                        }
-                      ]
-                    }
-                    physics Physics {
-                      density -1
-                      mass 0.150783
-                      centerOfMass [
-                        -0.074948 -0.054601 -0.011014
-                      ]
-                      inertiaMatrix [
-                        8.71453e-05 0.0001364142 0.0002218951
-                        -9.719146e-05 4.302655e-17 -1.159473e-17
-                      ]
-                    }
-                  }
-                }
-              ]
-              name "left-Link rod-1"
-              boundingObject Pose {
-                translation -0.046985 0.030928 -0.01275
-                rotation 0 0 1 -0.582364
-                children [
-                  Box {
-                    size 0.130227 0.018024 0.03675
-                  }
-                ]
-              }
-              physics Physics {
-                density -1
-                mass 0.068213
-                centerOfMass [
-                  -0.046985 0.030928 -0.020472
-                ]
-                inertiaMatrix [
-                  2.182092e-05 4.329908e-05 5.75366e-05
-                  2.494774e-05 5.543682e-20 -3.668104e-20
-                ]
-              }
-            }
-          }
-        ]
-        name "left_calf-link"
-        boundingObject Pose {
-          translation 0.031734 0.003365 -0.00115
-          rotation 0 0 1 0.10564
-          children [
-            Box {
-              size 0.149852 0.086029 0.0454
-            }
-          ]
-        }
-        physics Physics {
-          density -1
-          mass 0.131395
-          centerOfMass [
-            0.034153 0.003636 0.001417
-          ]
-          inertiaMatrix [
-            3.347692e-05 0.0001042603 0.0001350646
-            -7.621569e-06 6.440056e-07 6.855724e-08
-          ]
-        }
-      }
-    }
-    DEF L2 HingeJoint {
-      jointParameters HingeJointParameters {
-        axis 0 1 0
-        anchor 0.000779 0.180142 0.028282
-      }
-      device [
-        RotationalMotor {
-          name "Left_Back_Motor"
-          maxTorque 25
-        }
-        PositionSensor {
-          name "Left_Back_Motor_Sensor"
-        }
-      ]
-      endPoint Solid {
-        translation 0.000779 0.180142 0.028282
-        rotation -1 -2.994714193788414e-22 -1.497357096894207e-22 1.5707959999999987
+        translation -0.00075 -0.201762 0.028527
+        rotation 1 0 0 1.570796
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 1
-              anchor -0.0939689 0.010005 0
+              anchor -0.0939689 -0.010005 0
             }
             endPoint SolidReference {
-              solidName "left-Link rod-2"
+              solidName "right-link rod-3"
             }
           }
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 -1
-              anchor -0.20882 0.0222334 0
+              anchor -0.20882 -0.0222334 0
             }
             endPoint SolidReference {
-              solidName "left-Link rod-5"
+              solidName "right-calf-link rod-5"
             }
           }
           Shape {
-            appearance DEF left-thigh-link_material PBRAppearance {
-              baseColor 0.0196078 0.054902 0.784314
+            appearance DEF right-thigh_material PBRAppearance {
+              baseColor 0.333333 1 1
               roughness 1
               metalness 0
             }
-            geometry DEF left-thigh-link Mesh {
+            geometry DEF right-thigh Mesh {
               url [
-                "../meshes/left-thigh-link.STL"
+                "../meshes/right-thigh.STL"
               ]
             }
           }
         ]
-        name "left-thigh-link"
+        name "right-thigh"
         boundingObject Pose {
-          translation -0.097562 0.012916 -0.012225
-          rotation 0 0 1 -0.090869
+          translation -0.097865491 -0.00538505 -0.02091953
+          rotation 0 0 1 0.001737655
           children [
             Box {
-              size 0.282826 0.094182 0.07225
+              size 0.281929803 0.097111855 0.047749999
             }
           ]
         }
         physics Physics {
           density -1
-          mass 0.645183
+          mass 0.175263
           centerOfMass [
-            -0.054534 0.004144 -0.015522
+            -0.091247 -0.00688 -0.026077
           ]
           inertiaMatrix [
-            0.0002818191 0.001077473 0.001257021
-            8.052251e-05 -8.232635e-08 5.602496e-07
+            7.917144e-05 0.0006600908 0.0007327489
+            -5.882171e-05 -6.009062e-08 -4.089414e-07
           ]
         }
       }
@@ -406,7 +119,7 @@ Robot {
     DEF R1 HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
-        anchor 0.000779 -0.209108 0.028282
+        anchor -0.00075 -0.201762 0.028527
       }
       device [
         RotationalMotor {
@@ -418,38 +131,38 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.000779 -0.209108 0.028282
-        rotation 1 3.9252317880823494e-17 2.9947141937884136e-22 1.5707959999999994
+        translation -0.00075 -0.201762 0.028527
+        rotation 1 0 0 1.570796
         children [
           Shape {
-            appearance DEF right_calf-link_material PBRAppearance {
-              baseColor 0.333333 0.333333 0
+            appearance DEF right-calf-link_rod-1_material PBRAppearance {
+              baseColor 0.666667 0 0
               roughness 1
               metalness 0
             }
-            geometry DEF right_calf-link Mesh {
+            geometry DEF right-calf-link_rod-1 Mesh {
               url [
-                "../meshes/right_calf-link.STL"
+                "../meshes/right-calf-link rod-1.STL"
               ]
             }
           }
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 1
-              anchor 0.093969 -0.010003 -0.007475
+              anchor 0.093969 -0.009752 0.00033
             }
             endPoint Solid {
-              translation 0.093969 -0.010003 -0.007475
+              translation 0.093969 -0.009752 0.00033
               children [
                 Shape {
-                  appearance DEF right-Link_rod-1_material PBRAppearance {
-                    baseColor 1 0.666667 1
+                  appearance DEF right-link_rod-2_material PBRAppearance {
+                    baseColor 0 0.333333 0
                     roughness 1
                     metalness 0
                   }
-                  geometry DEF right-Link_rod-1 Mesh {
+                  geometry DEF right-link_rod-2 Mesh {
                     url [
-                      "../meshes/right-Link rod-1.STL"
+                      "../meshes/right-link rod-2.STL"
                     ]
                   }
                 }
@@ -462,14 +175,14 @@ Robot {
                     translation -0.093969 -0.061855 0
                     children [
                       Shape {
-                        appearance DEF right-Link_rod-2_material PBRAppearance {
+                        appearance DEF right-link_rod-3_material PBRAppearance {
                           baseColor 0.666667 0.333333 0
                           roughness 1
                           metalness 0
                         }
-                        geometry DEF right-Link_rod-2 Mesh {
+                        geometry DEF right-link_rod-3 Mesh {
                           url [
-                            "../meshes/right-Link rod-2.STL"
+                            "../meshes/right-link rod-3.STL"
                           ]
                         }
                       }
@@ -482,14 +195,14 @@ Robot {
                           translation -0.137162 0.110428 0.006125
                           children [
                             Shape {
-                              appearance DEF right-Link_rod-4_material PBRAppearance {
-                                baseColor 0 0.333333 0
+                              appearance DEF right-link_rod-4_material PBRAppearance {
+                                baseColor 0 0.666667 0
                                 roughness 1
                                 metalness 0
                               }
-                              geometry DEF right-Link_rod-4 Mesh {
+                              geometry DEF right-link_rod-4 Mesh {
                                 url [
-                                  "../meshes/right-Link rod-4.STL"
+                                  "../meshes/right-link rod-4.STL"
                                 ]
                               }
                             }
@@ -502,14 +215,14 @@ Robot {
                                 translation -0.114851 -0.012226 0
                                 children [
                                   Shape {
-                                    appearance DEF right-Link_rod-5_material PBRAppearance {
-                                      baseColor 0.784314 0.00784314 0.14902
+                                    appearance DEF right-calf-link_rod-5_material PBRAppearance {
+                                      baseColor 1 0.333333 1
                                       roughness 1
                                       metalness 0
                                     }
-                                    geometry DEF right-Link_rod-5 Mesh {
+                                    geometry DEF right-calf-link_rod-5 Mesh {
                                       url [
-                                        "../meshes/right-Link rod-5.STL"
+                                        "../meshes/right-calf-link rod-5.STL"
                                       ]
                                     }
                                   }
@@ -533,13 +246,13 @@ Robot {
                                       children [
                                         Shape {
                                           appearance DEF right-wheel_material PBRAppearance {
-                                            baseColor 0.333333 0.333333 0.498039
+                                            baseColor 0.333333 0 1
                                             roughness 1
                                             metalness 0
                                           }
                                           geometry DEF right-wheel Mesh {
                                             url [
-                                              "../meshes/right-wheel.STL"
+                                              "../meshes/right-wheel_visual.obj"
                                             ]
                                           }
                                           castShadows FALSE
@@ -547,36 +260,36 @@ Robot {
                                       ]
                                       name "right-wheel"
                                       boundingObject Pose {
-                                        translation 3.6e-05 6.2e-05 -0.022455
+                                        translation 0 0 -0.022455344
                                         children [
                                           Cylinder {
-                                            height 0.0617
-                                            radius 0.05995
+                                            height 0.061699999
+                                            radius 0.060000003
                                             subdivision 24
                                           }
                                         ]
                                       }
                                       physics Physics {
                                         density -1
-                                        mass 0.399779
+                                        mass 0.175277
                                         centerOfMass [
-                                          -2.6e-05 0.000193 -0.010427
+                                          0.000185 -1.4e-05 -0.014036
                                         ]
                                         inertiaMatrix [
-                                          0.0002809021 0.0002823812 0.0005387982
-                                          -1.588053e-07 -4.100455e-08 4.263641e-07
+                                          0.0001418041 0.0001411637 0.0002687597
+                                          -7.889632e-08 1.010076e-07 -2.118822e-08
                                         ]
                                       }
                                     }
                                   }
                                 ]
-                                name "right-Link rod-5"
+                                name "right-calf-link rod-5"
                                 boundingObject Pose {
-                                  translation 0.131609 -0.100803 -0.0267
-                                  rotation 0 0 1 -0.636222
+                                  translation 0.131042779 -0.101869152 -0.025999992
+                                  rotation 0 0 1 -0.607601762
                                   children [
                                     Box {
-                                      size 0.359875 0.070972 0.0419
+                                      size 0.35971131 0.064921851 0.040499987
                                     }
                                   ]
                                 }
@@ -584,179 +297,466 @@ Robot {
                                   density -1
                                   mass 0.174732
                                   centerOfMass [
-                                    0.118227 -0.10023 -0.019482
+                                    0.120073 -0.098012 -0.019482
                                   ]
                                   inertiaMatrix [
-                                    0.000473505 0.000879964 0.00134391
-                                    0.000592039 -4.63707e-07 2.97042e-07
+                                    0.0004516042 0.0009018646 0.001343908
+                                    0.0005840626 -4.691573e-07 2.883576e-07
                                   ]
                                 }
                               }
                             }
                           ]
-                          name "right-Link rod-4"
+                          name "right-link rod-4"
                           boundingObject Pose {
-                            translation -0.057426 -0.006113 -0.015625
-                            rotation 0 0 1 0.10608
+                            translation -0.05742553 -0.006113201 -0.015625001
+                            rotation 0 0 1 0.106216053
                             children [
                               Box {
-                                size 0.133227 0.018003 0.03675
+                                size 0.133227045 0.018018602 0.036750002
                               }
                             ]
                           }
                           physics Physics {
                             density -1
-                            mass 0.071762
+                            mass 0.019487
                             centerOfMass [
-                              -0.057426 -0.006113 -0.007772
+                              -0.057333 -0.006103 -0.007249
                             ]
                             inertiaMatrix [
-                              6.170414e-06 6.554516e-05 6.407291e-05
-                              -6.393154e-06 -2.74636e-19 -3.230524e-20
+                              1.395326e-06 2.338597e-05 2.364817e-05
+                              -2.367835e-06 -1.537299e-17 -1.415119e-18
                             ]
                           }
                         }
                       }
                     ]
-                    name "right-Link rod-2"
+                    name "right-link rod-3"
                     boundingObject Pose {
-                      translation -0.072548 0.050055 -0.011125
-                      rotation 0 0 1 -0.666953
+                      translation -0.0725399 0.050062609 -0.011125
+                      rotation 0 0 1 -0.666741758
                       children [
                         Box {
-                          size 0.200839 0.039743 0.0248
+                          size 0.200838143 0.039756608 0.013
                         }
                       ]
                     }
                     physics Physics {
                       density -1
-                      mass 0.150783
+                      mass 0.035255
                       centerOfMass [
-                        -0.074948 0.054601 -0.011014
+                        -0.073589 0.052916 -0.011125
                       ]
                       inertiaMatrix [
-                        8.71453e-05 0.0001364142 0.0002218951
-                        9.719146e-05 8.678935e-17 4.736593e-17
+                        3.168251e-05 4.993026e-05 8.112095e-05
+                        3.599684e-05 -7.999002e-20 5.940613e-20
                       ]
                     }
                   }
                 }
               ]
-              name "right-Link rod-1"
+              name "right-link rod-2"
               boundingObject Pose {
-                translation -0.046985 -0.030928 -0.01275
-                rotation 0 0 1 0.581941
+                translation -0.046984523 -0.030927608 -0.012749999
+                rotation 0 0 1 0.582152076
                 children [
                   Box {
-                    size 0.130227 0.018024 0.03675
+                    size 0.130226544 0.018000185 0.036750001
                   }
                 ]
               }
               physics Physics {
                 density -1
-                mass 0.068213
+                mass 0.018204
                 centerOfMass [
-                  -0.046985 -0.030928 -0.020472
+                  -0.046985 -0.030928 -0.02102
                 ]
                 inertiaMatrix [
-                  2.182092e-05 4.329908e-05 5.75366e-05
-                  -2.494774e-05 -2.09772e-19 -1.358774e-19
+                  7.192218e-06 1.514709e-05 2.122813e-05
+                  -9.239902e-06 -1.055454e-17 -1.074385e-17
                 ]
               }
             }
           }
         ]
-        name "right_calf-link"
+        name "right-calf-link rod-1"
         boundingObject Pose {
-          translation 0.031694 -0.003389 -0.02935
-          rotation 0 0 1 -0.106514
+          translation 0.031679641 0.000251168 -0.007569533
           children [
             Box {
-              size 0.149927 0.086177 0.0463
+              size 0.149540268 0.086180966 0.123350002
             }
           ]
         }
         physics Physics {
           density -1
-          mass 0.131395
+          mass 0.159578
           centerOfMass [
-            0.034153 -0.003636 -0.026927
+            0.00643 -0.000438 -0.023201
           ]
           inertiaMatrix [
-            3.347692e-05 0.0001042603 0.0001350646
-            7.621569e-06 -6.440056e-07 6.855724e-08
+            5.725738e-05 8.372527e-05 0.00010446
+            2.724806e-06 -2.332021e-07 9.152237e-09
           ]
         }
       }
     }
-    DEF R2 HingeJoint {
+    DEF L2 HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
-        anchor 0.000779 -0.209108 0.028282
+        anchor -0.00075 0.200627 0.028527
       }
       device [
         RotationalMotor {
-          name "Right_Back_Motor"
+          name "Left_Back_Motor"
           maxTorque 25
         }
         PositionSensor {
-          name "Right_Back_Motor_Sensor"
+          name "Left_Back_Motor_Sensor"
         }
       ]
       endPoint Solid {
-        translation 0.000779 -0.209108 0.028282
-        rotation 1 0 -3.925231788082349e-17 1.5707959999999996
+        translation -0.00075 0.200627 0.028527
+        rotation -1 0 0 1.570796
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
-              axis 0 0 1
-              anchor -0.0939689 -0.010005 0
+              axis 0 0 -1
+              anchor -0.0939689 0.010004 0
             }
             endPoint SolidReference {
-              solidName "right-Link rod-2"
+              solidName "left-link rod-3"
             }
           }
           HingeJoint {
             jointParameters HingeJointParameters {
               axis 0 0 -1
-              anchor -0.20882 -0.0222334 0
+              anchor -0.20882 0.0222334 0
             }
             endPoint SolidReference {
-              solidName "right-Link rod-5"
+              solidName "left-calf-link rod-5"
             }
           }
           Shape {
-            appearance DEF right-thigh-link_material PBRAppearance {
-              baseColor 0.223529 0.223529 0.223529
+            appearance DEF left-thigh_material PBRAppearance {
+              baseColor 1 0.333333 0.498039
               roughness 1
               metalness 0
             }
-            geometry DEF right-thigh-link Mesh {
+            geometry DEF left-thigh Mesh {
               url [
-                "../meshes/right-thigh-link.STL"
+                "../meshes/left-thigh.STL"
               ]
             }
           }
         ]
-        name "right-thigh-link"
+        name "left-thigh"
         boundingObject Pose {
-          translation -0.097554 -0.012972 -0.040925
-          rotation 0 0 1 0.091488
+          translation -0.097862167 0.005323171 -0.019784151
+          rotation 0 0 1 -0.001084345
           children [
             Box {
-              size 0.282826 0.094174 0.07235
+              size 0.281916438 0.097116552 0.04775
             }
           ]
         }
         physics Physics {
           density -1
-          mass 0.646568
+          mass 0.175263
           centerOfMass [
-            -0.054865 -0.004183 -0.044192
+            -0.091247 0.00688 -0.024942
           ]
           inertiaMatrix [
-            0.0002820384 0.001077692 0.001257459
-            -8.052251e-05 -8.232635e-08 -5.602496e-07
+            7.917144e-05 0.0006600908 0.0007327489
+            5.882171e-05 -6.009081e-08 4.089413e-07
+          ]
+        }
+      }
+    }
+    DEF L1 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.00075 0.200627 0.028527
+      }
+      device [
+        RotationalMotor {
+          name "Left_Front_Motor"
+          maxTorque 25
+        }
+        PositionSensor {
+          name "Left_Front_Motor_Sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.00075 0.200627 0.028527
+        rotation -1 0 0 1.570796
+        children [
+          Shape {
+            appearance DEF left-calf-link_rod-1_material PBRAppearance {
+              baseColor 0.666667 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry DEF left-calf-link_rod-1 Mesh {
+              url [
+                "../meshes/left-calf-link rod-1.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 -1
+              anchor 0.093969 0.009752 0.001466
+            }
+            endPoint Solid {
+              translation 0.093969 0.009752 0.001466
+              rotation 0 0 -1 0
+              children [
+                Shape {
+                  appearance DEF left-link_rod-2_material PBRAppearance {
+                    baseColor 0 0.333333 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF left-link_rod-2 Mesh {
+                    url [
+                      "../meshes/left-link rod-2.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0 0 -1
+                    anchor -0.093969 0.061855 0
+                  }
+                  endPoint Solid {
+                    translation -0.093969 0.061855 0
+                    rotation 0 0 -1 0
+                    children [
+                      Shape {
+                        appearance DEF left-link_rod-3_material PBRAppearance {
+                          baseColor 0.666667 0.333333 0
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF left-link_rod-3 Mesh {
+                          url [
+                            "../meshes/left-link rod-3.STL"
+                          ]
+                        }
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0 0 -1
+                          anchor -0.137162 -0.110428 0.006125
+                        }
+                        endPoint Solid {
+                          translation -0.137162 -0.110428 0.006125
+                          rotation 0 0 -1 0
+                          children [
+                            Shape {
+                              appearance DEF left-link_rod-4_material PBRAppearance {
+                                baseColor 0 0.666667 0
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry DEF left-link_rod-4 Mesh {
+                                url [
+                                  "../meshes/left-link rod-4.STL"
+                                ]
+                              }
+                            }
+                            HingeJoint {
+                              jointParameters HingeJointParameters {
+                                axis 0 0 -1
+                                anchor -0.114851 0.012226 0
+                              }
+                              endPoint Solid {
+                                translation -0.114851 0.012226 0
+                                rotation 0 0 -1 0
+                                children [
+                                  Shape {
+                                    appearance DEF left-calf-link_rod-5_material PBRAppearance {
+                                      baseColor 1 0 1
+                                      roughness 1
+                                      metalness 0
+                                    }
+                                    geometry DEF left-calf-link_rod-5 Mesh {
+                                      url [
+                                        "../meshes/left-calf-link rod-5.STL"
+                                      ]
+                                    }
+                                  }
+                                  HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      axis 0 0 1
+                                      anchor 0.252014 0.186029 0.020455
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "Left_Wheel"
+                                        maxTorque 50
+                                      }
+                                      PositionSensor {
+                                        name "Left_Wheel_Sensor"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      translation 0.252014 0.186029 0.020455
+                                      children [
+                                        Shape {
+                                          appearance DEF left-wheel_material PBRAppearance {
+                                            baseColor 0.333333 0 1
+                                            roughness 1
+                                            metalness 0
+                                          }
+                                          geometry DEF left-wheel Mesh {
+                                            url [
+                                              "../meshes/left-wheel_visual.obj"
+                                            ]
+                                          }
+                                          castShadows FALSE
+                                        }
+                                      ]
+                                      name "left-wheel"
+                                      boundingObject Pose {
+                                        translation 0 0 -0.022455344
+                                        children [
+                                          Cylinder {
+                                            height 0.061699999
+                                            radius 0.060000003
+                                            subdivision 24
+                                          }
+                                        ]
+                                      }
+                                      physics Physics {
+                                        density -1
+                                        mass 0.175277
+                                        centerOfMass [
+                                          0.000185 1.4e-05 -0.014036
+                                        ]
+                                        inertiaMatrix [
+                                          0.0001418041 0.0001411637 0.0002687597
+                                          7.889843e-08 1.010079e-07 2.118942e-08
+                                        ]
+                                      }
+                                    }
+                                  }
+                                ]
+                                name "left-calf-link rod-5"
+                                boundingObject Pose {
+                                  translation 0.130885637 0.102106615 -0.025999992
+                                  rotation 0 0 1 0.60568762
+                                  children [
+                                    Box {
+                                      size 0.359701672 0.064924895 0.040499987
+                                    }
+                                  ]
+                                }
+                                physics Physics {
+                                  density -1
+                                  mass 0.174732
+                                  centerOfMass [
+                                    0.120073 0.098012 -0.019482
+                                  ]
+                                  inertiaMatrix [
+                                    0.0004516042 0.0009018646 0.001343908
+                                    -0.0005840626 -4.691574e-07 -2.883575e-07
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                          name "left-link rod-4"
+                          boundingObject Pose {
+                            translation -0.05742553 0.006113201 -0.015625001
+                            rotation 0 0 1 -0.106163067
+                            children [
+                              Box {
+                                size 0.13322688 0.018012483 0.036750002
+                              }
+                            ]
+                          }
+                          physics Physics {
+                            density -1
+                            mass 0.019487
+                            centerOfMass [
+                              -0.057333 0.006103 -0.007249
+                            ]
+                            inertiaMatrix [
+                              1.395326e-06 2.338597e-05 2.364817e-05
+                              2.367835e-06 -1.529957e-17 1.407363e-18
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "left-link rod-3"
+                    boundingObject Pose {
+                      translation -0.072590612 -0.050014942 -0.011125
+                      rotation 0 0 1 0.668006353
+                      children [
+                        Box {
+                          size 0.200841886 0.039675274 0.013
+                        }
+                      ]
+                    }
+                    physics Physics {
+                      density -1
+                      mass 0.035255
+                      centerOfMass [
+                        -0.073589 -0.052916 -0.011125
+                      ]
+                      inertiaMatrix [
+                        3.168251e-05 4.993026e-05 8.112095e-05
+                        -3.599684e-05 7.377026e-20 5.436619e-20
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "left-link rod-2"
+              boundingObject Pose {
+                translation -0.046984523 0.030927608 -0.012749999
+                rotation 0 0 1 -0.582152072
+                children [
+                  Box {
+                    size 0.130226544 0.018000185 0.036750001
+                  }
+                ]
+              }
+              physics Physics {
+                density -1
+                mass 0.018204
+                centerOfMass [
+                  -0.046985 0.030928 -0.02102
+                ]
+                inertiaMatrix [
+                  7.192218e-06 1.514709e-05 2.122813e-05
+                  9.239902e-06 -1.050996e-17 1.071485e-17
+                ]
+              }
+            }
+          }
+        ]
+        name "left-calf-link rod-1"
+        boundingObject Pose {
+          translation 0.031679662 -0.000251168 -0.006434154
+          children [
+            Box {
+              size 0.149540272 0.086180966 0.123350002
+            }
+          ]
+        }
+        physics Physics {
+          density -1
+          mass 0.159578
+          centerOfMass [
+            0.00643 0.000438 -0.022065
+          ]
+          inertiaMatrix [
+            5.725738e-05 8.372527e-05 0.00010446
+            -2.724806e-06 -2.332021e-07 -9.152237e-09
           ]
         }
       }
@@ -764,22 +764,22 @@ Robot {
   ]
   name "TestModelAssembly"
   boundingObject Pose {
-    translation 0.000779 -0.000108 -0.018218
+    translation -0.000749975 -0.000567704 -0.01772147
     children [
       Box {
-        size 0.583998 0.2964 0.238
+        size 0.583997726 0.512799978 0.237999745
       }
     ]
   }
   physics Physics {
     density -1
-    mass 4.259101
+    mass 3.90897
     centerOfMass [
-      -0.00111 -0.000249 -0.003312
+      -0.001739 -0.000408 -0.004231
     ]
     inertiaMatrix [
-      0.004919588 0.008696656 0.008998081
-      6.538572e-07 3.474835e-05 9.216899e-07
+      0.004749299 0.008412125 0.008735721
+      6.486853e-07 3.465656e-05 8.887202e-07
     ]
   }
   controller "my_controller"

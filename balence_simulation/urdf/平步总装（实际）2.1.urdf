@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="平步总装（实际）2.1">
+  <link
+    name="base-link">
+    <inertial>
+      <origin
+        xyz="-0.0017387579286636 -0.0004077189669874 -0.00423149762166353"
+        rpy="0 0 0" />
+      <mass
+        value="3.90897016895001" />
+      <inertia
+        ixx="0.00474929882036387"
+        ixy="6.48685276406767E-07"
+        ixz="3.46565638807081E-05"
+        iyy="0.00841212491955172"
+        iyz="8.88720240656756E-07"
+        izz="0.00873572113177694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/base-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/base-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right-thigh">
+    <inertial>
+      <origin
+        xyz="-0.0912466110829301 -0.00688027058926632 -0.0260769737840176"
+        rpy="0 0 0" />
+      <mass
+        value="0.175263377379515" />
+      <inertia
+        ixx="7.91714359652936E-05"
+        ixy="-5.8821708212198E-05"
+        ixz="-6.00906172954542E-08"
+        iyy="0.000660090777115872"
+        iyz="-4.08941384825395E-07"
+        izz="0.000732748932480102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RT-gear-joint"
+    type="continuous">
+    <origin
+      xyz="-0.000749980442919782 -0.20176222165903 0.0285272436246383"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base-link" />
+    <child
+      link="right-thigh" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-calf-link rod-1">
+    <inertial>
+      <origin
+        xyz="0.00642974932052855 -0.000437714500819864 -0.0232007106980041"
+        rpy="0 0 0" />
+      <mass
+        value="0.159577984538556" />
+      <inertia
+        ixx="5.72573757553679E-05"
+        ixy="2.72480556289119E-06"
+        ixz="-2.33202065025607E-07"
+        iyy="8.37252693104251E-05"
+        iyz="9.15223667235833E-09"
+        izz="0.000104459996235148" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-calf-link rod-1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-calf-link rod-1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RC-gear-joint"
+    type="continuous">
+    <origin
+      xyz="-0.000749980442919782 -0.20176222165903 0.0285272436246383"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base-link" />
+    <child
+      link="right-calf-link rod-1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-link rod-2">
+    <inertial>
+      <origin
+        xyz="-0.0469845230251527 -0.030927610578554 -0.0210204132576662"
+        rpy="0 0 0" />
+      <mass
+        value="0.0182036727715845" />
+      <inertia
+        ixx="7.19221817389986E-06"
+        ixy="-9.23990216761432E-06"
+        ixz="-1.05545386971062E-17"
+        iyy="1.51470924297451E-05"
+        iyz="-1.07438535243848E-17"
+        izz="2.12281329125293E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-link rod-2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-link rod-2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r-passive-lr2"
+    type="continuous">
+    <origin
+      xyz="0.0939690364932352 -0.00975224927913865 0.000330468340969725"
+      rpy="0 0 0" />
+    <parent
+      link="right-calf-link rod-1" />
+    <child
+      link="right-link rod-2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right-link rod-3">
+    <inertial>
+      <origin
+        xyz="-0.0735894108242613 0.0529156073919959 -0.0111250000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0352549070824253" />
+      <inertia
+        ixx="3.168251255043E-05"
+        ixy="3.5996838000379E-05"
+        ixz="-7.99900217403612E-20"
+        iyy="4.99302600453232E-05"
+        iyz="5.94061331944963E-20"
+        izz="8.11209513355873E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-link rod-3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-link rod-3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r-passive-lr3"
+    type="continuous">
+    <origin
+      xyz="-0.093969046050317 -0.0618552211570971 0"
+      rpy="0 0 0" />
+    <parent
+      link="right-link rod-2" />
+    <child
+      link="right-link rod-3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right-link rod-4">
+    <inertial>
+      <origin
+        xyz="-0.057332949445194 -0.00610334486732256 -0.00724896984759515"
+        rpy="0 0 0" />
+      <mass
+        value="0.0194869471958999" />
+      <inertia
+        ixx="1.39532647460517E-06"
+        ixy="-2.36783469577937E-06"
+        ixz="-1.53729867730417E-17"
+        iyy="2.33859728315967E-05"
+        iyz="-1.41511922149937E-18"
+        izz="2.36481711506462E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-link rod-4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-link rod-4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r-passive-lr4"
+    type="continuous">
+    <origin
+      xyz="-0.137162452686069 0.110428152128973 0.00612499999999963"
+      rpy="0 0 0" />
+    <parent
+      link="right-link rod-3" />
+    <child
+      link="right-link rod-4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-calf-link rod-5">
+    <inertial>
+      <origin
+        xyz="0.120072950857766 -0.0980119476443722 -0.0194816355569132"
+        rpy="0 0 0" />
+      <mass
+        value="0.17473212847001" />
+      <inertia
+        ixx="0.000451604204748087"
+        ixy="0.000584062644879818"
+        ixz="-4.69157331375688E-07"
+        iyy="0.000901864552444063"
+        iyz="2.88357591021641E-07"
+        izz="0.00134390832045784" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-calf-link rod-5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-calf-link rod-5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r-passive-lr5-near knee"
+    type="continuous">
+    <origin
+      xyz="-0.114851056283721 -0.0122264005542749 0"
+      rpy="0 0 0" />
+    <parent
+      link="right-link rod-4" />
+    <child
+      link="right-calf-link rod-5" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right-wheel">
+    <inertial>
+      <origin
+        xyz="0.000184776210115944 -1.41308050863875E-05 -0.0140361875262824"
+        rpy="0 0 0" />
+      <mass
+        value="0.175276699191101" />
+      <inertia
+        ixx="0.000141804072306844"
+        ixy="-7.88963188128E-08"
+        ixz="1.01007620214665E-07"
+        iyy="0.000141163716999817"
+        iyz="-2.11882213749285E-08"
+        izz="0.000268759653961648" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/right-wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right-wheel-joint"
+    type="continuous">
+    <origin
+      xyz="0.252013508969789 -0.186028977987646 0.0204553441982635"
+      rpy="0 0 0" />
+    <parent
+      link="right-calf-link rod-5" />
+    <child
+      link="right-wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-thigh">
+    <inertial>
+      <origin
+        xyz="-0.0912465932857966 0.00688027057945251 -0.0249415940382138"
+        rpy="0 0 0" />
+      <mass
+        value="0.175263373676834" />
+      <inertia
+        ixx="7.91714355151398E-05"
+        ixy="5.88217074997979E-05"
+        ixz="-6.00908105914261E-08"
+        iyy="0.000660090774190374"
+        iyz="4.0894128842423E-07"
+        izz="0.000732748929119047" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LT-gear-joint"
+    type="continuous">
+    <origin
+      xyz="-0.000749999557083545 0.20062684165903 0.0285272436246384"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base-link" />
+    <child
+      link="left-thigh" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-calf-link rod-1">
+    <inertial>
+      <origin
+        xyz="0.0064297684509815 0.000437714502565245 -0.0220653308509622"
+        rpy="0 0 0" />
+      <mass
+        value="0.159577984134279" />
+      <inertia
+        ixx="5.72573756562073E-05"
+        ixy="-2.72480556289112E-06"
+        ixz="-2.33202065055296E-07"
+        iyy="8.37252692112647E-05"
+        iyz="-9.15223676438547E-09"
+        izz="0.000104459996135054" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-calf-link rod-1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-calf-link rod-1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LC-gare-joint"
+    type="continuous">
+    <origin
+      xyz="-0.000749999557083545 0.20062684165903 0.0285272436246384"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base-link" />
+    <child
+      link="left-calf-link rod-1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-link rod-2">
+    <inertial>
+      <origin
+        xyz="-0.0469845230251528 0.0309276105785541 -0.0210204170979933"
+        rpy="0 0 0" />
+      <mass
+        value="0.0182036692621071" />
+      <inertia
+        ixx="7.19221814101801E-06"
+        ixy="9.23990216761432E-06"
+        ixz="-1.05099596810247E-17"
+        iyy="1.51470923968633E-05"
+        iyz="1.07148517470629E-17"
+        izz="2.12281328498909E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-link rod-2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-link rod-2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l-passive-lr2"
+    type="continuous">
+    <origin
+      xyz="0.0939690556073989 0.0097522492791387 0.00146584834096983"
+      rpy="0 0 0" />
+    <parent
+      link="left-calf-link rod-1" />
+    <child
+      link="left-link rod-2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left-link rod-3">
+    <inertial>
+      <origin
+        xyz="-0.0735894108242614 -0.0529156073919957 -0.011125"
+        rpy="0 0 0" />
+      <mass
+        value="0.0352549070824253" />
+      <inertia
+        ixx="3.16825125504299E-05"
+        ixy="-3.59968380003789E-05"
+        ixz="7.37702643473391E-20"
+        iyy="4.99302600453231E-05"
+        iyz="5.43661866452682E-20"
+        izz="8.11209513355872E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-link rod-3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-link rod-3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l-passive-lr3"
+    type="continuous">
+    <origin
+      xyz="-0.093969046050317 0.0618552211570971 0"
+      rpy="0 0 0" />
+    <parent
+      link="left-link rod-2" />
+    <child
+      link="left-link rod-3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left-link rod-4">
+    <inertial>
+      <origin
+        xyz="-0.0573329494285212 0.00610334486554764 -0.00724896601602654"
+        rpy="0 0 0" />
+      <mass
+        value="0.0194869436864224" />
+      <inertia
+        ixx="1.39532644172333E-06"
+        ixy="2.36783469577937E-06"
+        ixz="-1.52995665563523E-17"
+        iyy="2.33859727987149E-05"
+        iyz="1.40736291542588E-18"
+        izz="2.36481710880078E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-link rod-4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-link rod-4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l-passive-lr4"
+    type="continuous">
+    <origin
+      xyz="-0.137162452686069 -0.110428152128973 0.0061250000000001"
+      rpy="0 0 0" />
+    <parent
+      link="left-link rod-3" />
+    <child
+      link="left-link rod-4" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-calf-link rod-5">
+    <inertial>
+      <origin
+        xyz="0.120072940996356 0.0980119412519126 -0.0194816366892334"
+        rpy="0 0 0" />
+      <mass
+        value="0.174732150932719" />
+      <inertia
+        ixx="0.000451604208718257"
+        ixy="-0.000584062644798714"
+        ixz="-4.69157366874551E-07"
+        iyy="0.000901864556460401"
+        iyz="-2.88357532087801E-07"
+        izz="0.00134390832457993" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-calf-link rod-5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-calf-link rod-5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l-passive-lr5-near knee"
+    type="continuous">
+    <origin
+      xyz="-0.114851056283721 0.0122264005542748 0"
+      rpy="0 0 0" />
+    <parent
+      link="left-link rod-4" />
+    <child
+      link="left-calf-link rod-5" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left-wheel">
+    <inertial>
+      <origin
+        xyz="0.000184776381537172 1.4131424534547E-05 -0.0140361879738083"
+        rpy="0 0 0" />
+      <mass
+        value="0.175276695951966" />
+      <inertia
+        ixx="0.000141804073971918"
+        ixy="7.88984297334121E-08"
+        ixz="1.01007900953517E-07"
+        iyy="0.000141163716378641"
+        iyz="2.11894176853605E-08"
+        izz="0.00026875965439982" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://平步总装（实际）2.1/meshes/left-wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left-wheel-joint"
+    type="continuous">
+    <origin
+      xyz="0.252013508969789 0.186028977987646 0.0204553441982626"
+      rpy="0 0 0" />
+    <parent
+      link="left-calf-link rod-5" />
+    <child
+      link="left-wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>

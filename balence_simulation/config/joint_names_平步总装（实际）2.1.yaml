@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'RT-gear-joint', 'RC-gear-joint', 'r-passive-lr2', 'r-passive-lr3', 'r-passive-lr4', 'r-passive-lr5-near knee', 'right-wheel-joint', 'LT-gear-joint', 'LC-gare-joint', 'l-passive-lr2', 'l-passive-lr3', 'l-passive-lr4', 'l-passive-lr5-near knee', 'left-wheel-joint', ]

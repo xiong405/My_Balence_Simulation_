@@ -1,0 +1,630 @@
+#VRML_SIM R2025a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the TestModelAssembly
+# Extracted from: C:/Users/MECHREVO/Desktop/My_simscape/ture/balence_simulation/urdf/test_model_assembly_webots.urdf
+
+PROTO TestModelAssembly [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "TestModelAssembly"  # Is `Robot.name`.
+  field  SFString    controller      "void"               # Is `Robot.controller`.
+  field  MFString    controllerArgs  []                   # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""                   # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE                # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE                 # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE                # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF base-link_material PBRAppearance {
+          baseColor 0.792157 0.819608 0.933333
+          roughness 1.000000
+          metalness 0
+        }
+        geometry DEF base-link Mesh {
+          url "../meshes/base-link.STL"
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 1.000000 0.000000
+          anchor -0.000750 -0.201762 0.028527
+        }
+        device [
+          RotationalMotor {
+            name "RT-gear-joint"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "RT-gear-joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.000750 -0.201762 0.028527
+          rotation 1.000000 0.000000 0.000000 1.570796
+          children [
+            Shape {
+              appearance DEF right-thigh_material PBRAppearance {
+                baseColor 0.792157 0.819608 0.933333
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF right-thigh Mesh {
+                url "../meshes/right-thigh.STL"
+              }
+            }
+          ]
+          name "right-thigh"
+          boundingObject USE right-thigh
+          physics Physics {
+            density -1
+            mass 0.175263
+            centerOfMass [ -0.091247 -0.006880 -0.026077 ]
+            inertiaMatrix [
+              7.917144e-05 6.600908e-04 7.327489e-04
+              -5.882171e-05 -6.009062e-08 -4.089414e-07
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 1.000000 0.000000
+          anchor -0.000750 -0.201762 0.028527
+        }
+        device [
+          RotationalMotor {
+            name "RC-gear-joint"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "RC-gear-joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.000750 -0.201762 0.028527
+          rotation 1.000000 0.000000 0.000000 1.570796
+          children [
+            Shape {
+              appearance DEF right-calf-link_rod-1_material PBRAppearance {
+                baseColor 0.792157 0.819608 0.933333
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF right-calf-link_rod-1 Mesh {
+                url "../meshes/right-calf-link rod-1.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 0.000000 1.000000
+                anchor 0.093969 -0.009752 0.000330
+              }
+              device [
+                RotationalMotor {
+                  name "r-passive-lr2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "r-passive-lr2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.093969 -0.009752 0.000330
+                children [
+                  Shape {
+                    appearance DEF right-link_rod-2_material PBRAppearance {
+                      baseColor 0.792157 0.819608 0.933333
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF right-link_rod-2 Mesh {
+                      url "../meshes/right-link rod-2.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 0.000000 1.000000
+                      anchor -0.093969 -0.061855 0.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "r-passive-lr3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "r-passive-lr3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation -0.093969 -0.061855 0.000000
+                      children [
+                        Shape {
+                          appearance DEF right-link_rod-3_material PBRAppearance {
+                            baseColor 0.792157 0.819608 0.933333
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF right-link_rod-3 Mesh {
+                            url "../meshes/right-link rod-3.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 0.000000 -1.000000
+                            anchor -0.137162 0.110428 0.006125
+                          }
+                          device [
+                            RotationalMotor {
+                              name "r-passive-lr4"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "r-passive-lr4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.137162 0.110428 0.006125
+                            children [
+                              Shape {
+                                appearance DEF right-link_rod-4_material PBRAppearance {
+                                  baseColor 0.792157 0.819608 0.933333
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF right-link_rod-4 Mesh {
+                                  url "../meshes/right-link rod-4.STL"
+                                }
+                              }
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 0.000000 -1.000000
+                                  anchor -0.114851 -0.012226 0.000000
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "r-passive-lr5-near knee"
+                                    maxTorque 10000
+                                  }
+                                  PositionSensor {
+                                    name "r-passive-lr5-near knee_sensor"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation -0.114851 -0.012226 0.000000
+                                  children [
+                                    Shape {
+                                      appearance DEF right-calf-link_rod-5_material PBRAppearance {
+                                        baseColor 0.792157 0.819608 0.933333
+                                        roughness 1.000000
+                                        metalness 0
+                                      }
+                                      geometry DEF right-calf-link_rod-5 Mesh {
+                                        url "../meshes/right-calf-link rod-5.STL"
+                                      }
+                                    }
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        axis 0.000000 0.000000 -1.000000
+                                        anchor 0.252014 -0.186029 0.020455
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "right-wheel-joint"
+                                          maxTorque 10000
+                                        }
+                                        PositionSensor {
+                                          name "right-wheel-joint_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        translation 0.252014 -0.186029 0.020455
+                                        children [
+                                          Shape {
+                                            appearance DEF right-wheel_material PBRAppearance {
+                                              baseColor 0.792157 0.819608 0.933333
+                                              roughness 1.000000
+                                              metalness 0
+                                            }
+                                            geometry DEF right-wheel Mesh {
+                                              url "../meshes/right-wheel.STL"
+                                            }
+                                          }
+                                        ]
+                                        name "right-wheel"
+                                        boundingObject USE right-wheel
+                                        physics Physics {
+                                          density -1
+                                          mass 0.175277
+                                          centerOfMass [ 0.000185 -0.000014 -0.014036 ]
+                                          inertiaMatrix [
+                                            1.418041e-04 1.411637e-04 2.687597e-04
+                                            -7.889632e-08 1.010076e-07 -2.118822e-08
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "right-calf-link rod-5"
+                                  boundingObject USE right-calf-link_rod-5
+                                  physics Physics {
+                                    density -1
+                                    mass 0.174732
+                                    centerOfMass [ 0.120073 -0.098012 -0.019482 ]
+                                    inertiaMatrix [
+                                      4.516042e-04 9.018646e-04 1.343908e-03
+                                      5.840626e-04 -4.691573e-07 2.883576e-07
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "right-link rod-4"
+                            boundingObject USE right-link_rod-4
+                            physics Physics {
+                              density -1
+                              mass 0.019487
+                              centerOfMass [ -0.057333 -0.006103 -0.007249 ]
+                              inertiaMatrix [
+                                1.395326e-06 2.338597e-05 2.364817e-05
+                                -2.367835e-06 -1.537299e-17 -1.415119e-18
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "right-link rod-3"
+                      boundingObject USE right-link_rod-3
+                      physics Physics {
+                        density -1
+                        mass 0.035255
+                        centerOfMass [ -0.073589 0.052916 -0.011125 ]
+                        inertiaMatrix [
+                          3.168251e-05 4.993026e-05 8.112095e-05
+                          3.599684e-05 -7.999002e-20 5.940613e-20
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "right-link rod-2"
+                boundingObject USE right-link_rod-2
+                physics Physics {
+                  density -1
+                  mass 0.018204
+                  centerOfMass [ -0.046985 -0.030928 -0.021020 ]
+                  inertiaMatrix [
+                    7.192218e-06 1.514709e-05 2.122813e-05
+                    -9.239902e-06 -1.055454e-17 -1.074385e-17
+                  ]
+                }
+              }
+            }
+          ]
+          name "right-calf-link rod-1"
+          boundingObject USE right-calf-link_rod-1
+          physics Physics {
+            density -1
+            mass 0.159578
+            centerOfMass [ 0.006430 -0.000438 -0.023201 ]
+            inertiaMatrix [
+              5.725738e-05 8.372527e-05 1.044600e-04
+              2.724806e-06 -2.332021e-07 9.152237e-09
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 -1.000000 0.000000
+          anchor -0.000750 0.200627 0.028527
+        }
+        device [
+          RotationalMotor {
+            name "LT-gear-joint"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "LT-gear-joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.000750 0.200627 0.028527
+          rotation -1.000000 0.000000 0.000000 1.570796
+          children [
+            Shape {
+              appearance DEF left-thigh_material PBRAppearance {
+                baseColor 0.792157 0.819608 0.933333
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF left-thigh Mesh {
+                url "../meshes/left-thigh.STL"
+              }
+            }
+          ]
+          name "left-thigh"
+          boundingObject USE left-thigh
+          physics Physics {
+            density -1
+            mass 0.175263
+            centerOfMass [ -0.091247 0.006880 -0.024942 ]
+            inertiaMatrix [
+              7.917144e-05 6.600908e-04 7.327489e-04
+              5.882171e-05 -6.009081e-08 4.089413e-07
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 -1.000000 0.000000
+          anchor -0.000750 0.200627 0.028527
+        }
+        device [
+          RotationalMotor {
+            name "LC-gare-joint"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "LC-gare-joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.000750 0.200627 0.028527
+          rotation -1.000000 0.000000 0.000000 1.570796
+          children [
+            Shape {
+              appearance DEF left-calf-link_rod-1_material PBRAppearance {
+                baseColor 0.792157 0.819608 0.933333
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF left-calf-link_rod-1 Mesh {
+                url "../meshes/left-calf-link rod-1.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 0.000000 1.000000
+                anchor 0.093969 0.009752 0.001466
+              }
+              device [
+                RotationalMotor {
+                  name "l-passive-lr2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "l-passive-lr2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.093969 0.009752 0.001466
+                children [
+                  Shape {
+                    appearance DEF left-link_rod-2_material PBRAppearance {
+                      baseColor 0.792157 0.819608 0.933333
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF left-link_rod-2 Mesh {
+                      url "../meshes/left-link rod-2.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 0.000000 1.000000
+                      anchor -0.093969 0.061855 0.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "l-passive-lr3"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "l-passive-lr3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation -0.093969 0.061855 0.000000
+                      children [
+                        Shape {
+                          appearance DEF left-link_rod-3_material PBRAppearance {
+                            baseColor 0.792157 0.819608 0.933333
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF left-link_rod-3 Mesh {
+                            url "../meshes/left-link rod-3.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 0.000000 -1.000000
+                            anchor -0.137162 -0.110428 0.006125
+                          }
+                          device [
+                            RotationalMotor {
+                              name "l-passive-lr4"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "l-passive-lr4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.137162 -0.110428 0.006125
+                            children [
+                              Shape {
+                                appearance DEF left-link_rod-4_material PBRAppearance {
+                                  baseColor 0.792157 0.819608 0.933333
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF left-link_rod-4 Mesh {
+                                  url "../meshes/left-link rod-4.STL"
+                                }
+                              }
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 0.000000 -1.000000
+                                  anchor -0.114851 0.012226 0.000000
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "l-passive-lr5-near knee"
+                                    maxTorque 10000
+                                  }
+                                  PositionSensor {
+                                    name "l-passive-lr5-near knee_sensor"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation -0.114851 0.012226 0.000000
+                                  children [
+                                    Shape {
+                                      appearance DEF left-calf-link_rod-5_material PBRAppearance {
+                                        baseColor 0.792157 0.819608 0.933333
+                                        roughness 1.000000
+                                        metalness 0
+                                      }
+                                      geometry DEF left-calf-link_rod-5 Mesh {
+                                        url "../meshes/left-calf-link rod-5.STL"
+                                      }
+                                    }
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        axis 0.000000 0.000000 -1.000000
+                                        anchor 0.252014 0.186029 0.020455
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "left-wheel-joint"
+                                          maxTorque 10000
+                                        }
+                                        PositionSensor {
+                                          name "left-wheel-joint_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        translation 0.252014 0.186029 0.020455
+                                        children [
+                                          Shape {
+                                            appearance DEF left-wheel_material PBRAppearance {
+                                              baseColor 0.792157 0.819608 0.933333
+                                              roughness 1.000000
+                                              metalness 0
+                                            }
+                                            geometry DEF left-wheel Mesh {
+                                              url "../meshes/left-wheel.STL"
+                                            }
+                                          }
+                                        ]
+                                        name "left-wheel"
+                                        boundingObject USE left-wheel
+                                        physics Physics {
+                                          density -1
+                                          mass 0.175277
+                                          centerOfMass [ 0.000185 0.000014 -0.014036 ]
+                                          inertiaMatrix [
+                                            1.418041e-04 1.411637e-04 2.687597e-04
+                                            7.889843e-08 1.010079e-07 2.118942e-08
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "left-calf-link rod-5"
+                                  boundingObject USE left-calf-link_rod-5
+                                  physics Physics {
+                                    density -1
+                                    mass 0.174732
+                                    centerOfMass [ 0.120073 0.098012 -0.019482 ]
+                                    inertiaMatrix [
+                                      4.516042e-04 9.018646e-04 1.343908e-03
+                                      -5.840626e-04 -4.691574e-07 -2.883575e-07
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "left-link rod-4"
+                            boundingObject USE left-link_rod-4
+                            physics Physics {
+                              density -1
+                              mass 0.019487
+                              centerOfMass [ -0.057333 0.006103 -0.007249 ]
+                              inertiaMatrix [
+                                1.395326e-06 2.338597e-05 2.364817e-05
+                                2.367835e-06 -1.529957e-17 1.407363e-18
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "left-link rod-3"
+                      boundingObject USE left-link_rod-3
+                      physics Physics {
+                        density -1
+                        mass 0.035255
+                        centerOfMass [ -0.073589 -0.052916 -0.011125 ]
+                        inertiaMatrix [
+                          3.168251e-05 4.993026e-05 8.112095e-05
+                          -3.599684e-05 7.377026e-20 5.436619e-20
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "left-link rod-2"
+                boundingObject USE left-link_rod-2
+                physics Physics {
+                  density -1
+                  mass 0.018204
+                  centerOfMass [ -0.046985 0.030928 -0.021020 ]
+                  inertiaMatrix [
+                    7.192218e-06 1.514709e-05 2.122813e-05
+                    9.239902e-06 -1.050996e-17 1.071485e-17
+                  ]
+                }
+              }
+            }
+          ]
+          name "left-calf-link rod-1"
+          boundingObject USE left-calf-link_rod-1
+          physics Physics {
+            density -1
+            mass 0.159578
+            centerOfMass [ 0.006430 0.000438 -0.022065 ]
+            inertiaMatrix [
+              5.725738e-05 8.372527e-05 1.044600e-04
+              -2.724806e-06 -2.332021e-07 -9.152237e-09
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject USE base-link
+    physics Physics {
+      density -1
+      mass 3.908970
+      centerOfMass [ -0.001739 -0.000408 -0.004231 ]
+      inertiaMatrix [
+        4.749299e-03 8.412125e-03 8.735721e-03
+        6.486853e-07 3.465656e-05 8.887202e-07
+      ]
+    }
+  }
+}
