@@ -5,12 +5,12 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 
 WorldInfo {
-  gravity 0
+  gravity 9.8
   basicTimeStep 2
 }
 Viewpoint {
-  orientation -0.1276570429640038 -0.08084928904406272 0.9885176133194371 4.892108763711107
-  position -0.24504111281100044 1.2359558701214994 0.3841931156400534
+  orientation 0.06024278533952016 0.06343110697589009 -0.996166302121463 1.523036998930476
+  position -0.10604281810474302 1.684563370409118 0.36319742718690684
 }
 TexturedBackground {
 }
@@ -60,7 +60,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.00075 -0.201762 0.028527
-        rotation 1 0 0 1.570796
+        rotation 1 0 -7.85046357616471e-17 1.5707959999999965
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
@@ -132,7 +132,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.00075 -0.201762 0.028527
-        rotation 1 0 0 1.570796
+        rotation 1 0 3.9252317880823544e-17 1.570795999999997
         children [
           Shape {
             appearance DEF right-calf-link_rod-1_material PBRAppearance {
@@ -417,7 +417,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.00075 0.200627 0.028527
-        rotation -1 0 0 1.570796
+        rotation -1 -1.9626158940411747e-16 3.9252317880823494e-17 1.5707959999999987
         children [
           HingeJoint {
             jointParameters HingeJointParameters {
@@ -489,7 +489,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.00075 0.200627 0.028527
-        rotation -1 0 0 1.570796
+        rotation -1 7.850463576164707e-17 -1.1775695364247064e-16 1.5707959999999972
         children [
           Shape {
             appearance DEF left-calf-link_rod-1_material PBRAppearance {
@@ -783,4 +783,5 @@ Robot {
     ]
   }
   controller "my_controller"
+  supervisor TRUE
 }
