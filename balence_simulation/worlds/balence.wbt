@@ -9,8 +9,8 @@ WorldInfo {
   basicTimeStep 2
 }
 Viewpoint {
-  orientation 0.06024278533952016 0.06343110697589009 -0.996166302121463 1.523036998930476
-  position -0.10604281810474302 1.684563370409118 0.36319742718690684
+  orientation 0.0602475127924328 0.06217887100096134 -0.996244962448178 1.5429611169027908
+  position -0.0749630231538406 1.684325275804289 0.36319742718690684
 }
 TexturedBackground {
 }
@@ -44,18 +44,18 @@ Robot {
       }
       castShadows FALSE
     }
-    DEF R2 HingeJoint {
+    DEF R1 HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
         anchor -0.00075 -0.201762 0.028527
       }
       device [
         RotationalMotor {
-          name "Right_Back_Motor"
+          name "Right_Front_Motor"
           maxTorque 25
         }
         PositionSensor {
-          name "Right_Back_Motor_Sensor"
+          name "Right_Front_Motor_Sensor"
         }
       ]
       endPoint Solid {
@@ -116,18 +116,18 @@ Robot {
         }
       }
     }
-    DEF R1 HingeJoint {
+    DEF R2 HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
         anchor -0.00075 -0.201762 0.028527
       }
       device [
         RotationalMotor {
-          name "Right_Front_Motor"
+          name "Right_Back_Motor"
           maxTorque 25
         }
         PositionSensor {
-          name "Right_Front_Motor_Sensor"
+          name "Right_Back_Motor_Sensor"
         }
       ]
       endPoint Solid {
@@ -401,18 +401,18 @@ Robot {
         }
       }
     }
-    DEF L2 HingeJoint {
+    DEF L1 HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
         anchor -0.00075 0.200627 0.028527
       }
       device [
         RotationalMotor {
-          name "Left_Back_Motor"
+          name "Left_Front_Motor"
           maxTorque 25
         }
         PositionSensor {
-          name "Left_Back_Motor_Sensor"
+          name "Left_Front_Motor_Sensor"
         }
       ]
       endPoint Solid {
@@ -473,18 +473,18 @@ Robot {
         }
       }
     }
-    DEF L1 HingeJoint {
+    DEF L2 HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
         anchor -0.00075 0.200627 0.028527
       }
       device [
         RotationalMotor {
-          name "Left_Front_Motor"
+          name "Left_Back_Motor"
           maxTorque 25
         }
         PositionSensor {
-          name "Left_Front_Motor_Sensor"
+          name "Left_Back_Motor_Sensor"
         }
       ]
       endPoint Solid {
