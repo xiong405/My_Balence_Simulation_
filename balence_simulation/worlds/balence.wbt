@@ -9,8 +9,8 @@ WorldInfo {
   basicTimeStep 2
 }
 Viewpoint {
-  orientation 0.0602475127924328 0.06217887100096134 -0.996244962448178 1.5429611169027908
-  position -0.0749630231538406 1.684325275804289 0.36319742718690684
+  orientation 0.21453404744704843 0.1924503685399165 -0.957568795510191 1.7221892137703132
+  position 0.028997024163740004 2.1656361660586687 0.8768505152837279
 }
 TexturedBackground {
 }
@@ -46,7 +46,7 @@ Robot {
     }
     DEF R1 HingeJoint {
       jointParameters HingeJointParameters {
-        axis 0 1 0
+        axis 0 -1 0
         anchor -0.00075 -0.201762 0.028527
       }
       device [
@@ -118,7 +118,7 @@ Robot {
     }
     DEF R2 HingeJoint {
       jointParameters HingeJointParameters {
-        axis 0 1 0
+        axis 0 -1 0
         anchor -0.00075 -0.201762 0.028527
       }
       device [
@@ -228,7 +228,7 @@ Robot {
                                   }
                                   HingeJoint {
                                     jointParameters HingeJointParameters {
-                                      axis 0 0 -1
+                                      axis 0 0 1
                                       anchor 0.252014 -0.186029 0.020455
                                     }
                                     device [
@@ -242,7 +242,6 @@ Robot {
                                     ]
                                     endPoint Solid {
                                       translation 0.252014 -0.186029 0.020455
-                                      rotation 0 0 -1 0
                                       children [
                                         Shape {
                                           appearance DEF right-wheel_material PBRAppearance {

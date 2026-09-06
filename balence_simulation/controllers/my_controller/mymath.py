@@ -94,3 +94,27 @@ def LinearKalman(A, B, Q_c, R_c, H, z, x_hat, P):
     P = (np.identity(A.shape[0]) - K * H) * P_minus
 
     return x_hat, x_hat_minus, P
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

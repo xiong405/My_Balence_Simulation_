@@ -1,0 +1,11 @@
+cd "C:\Users\MECHREVO\Desktop\My_simscape\ture\My_Balence_Simulation"
+
+git status
+git remote -v
+git branch --show-current
+
+git add .
+git status
+
+git commit -m "更新URDF模型、物理参数和控制代码"
+git push
