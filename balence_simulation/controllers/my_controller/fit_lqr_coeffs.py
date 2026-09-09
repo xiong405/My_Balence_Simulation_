@@ -436,9 +436,9 @@ if __name__ == "__main__":
     lr_grid = np.linspace(0.16000280, 0.38957695, 24)
     theta_lin = 0.0
     dt = 0.002
-    # q_diag = [1000, 5, 2000, 5, 2000, 5, 500, 1, 10000, 10]
-    q_diag = [1000, 5, 2000, 5, 2000, 5, 500, 1, 500, 1]
-    r_diag = [10, 10, 1, 1]
+    q_diag = [500, 5, 2000, 10, 3000, 15, 3000, 15, 16000, 30]
+    # q_diag = [1000, 5, 2000, 5, 2000, 5, 500, 1, 500, 1]
+    r_diag = [24, 24, 2, 2]
 
     coeffs = fit_coefficients(ll_grid, lr_grid, q_diag, r_diag, theta_lin, dt)
 
