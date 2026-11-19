@@ -3,7 +3,7 @@ import scipy.sparse as sparse
 from scipy.signal import cont2discrete
 import osqp
 import matplotlib.pyplot as plt
-
+import time
 class Height_Roll_MPC_inc:
     def __init__(
         self,
@@ -242,4 +242,70 @@ class Height_Roll_MPC_inc:
         F_left = (self.F_eq + u_now[0])
         F_right = (self.F_eq + u_now[1])
         return (float(F_left),float(F_right),)
+
+# if __name__ == "__main__":
+
+#     # 只初始化一次
+#     mpc = Height_Roll_MPC_inc(
+#         mass=4.5,
+#         roll_inertia=0.1,
+#         half_track=0.228,
+#         damping=0.0,
+#         F_min=5.0,
+#         F_max=40.0,
+#         F_rate_max=3.0,
+#         equilibrium_force=None,
+#         Q=[
+#             130.0,
+#             1.0,
+#             2500.0,
+#             25.0,
+#         ],
+#         R=[
+#             0.01,
+#             0.01,
+#         ],
+#         sample_time=0.01,
+#         Horizon=15,
+#     )
+
+#     while True:
+
+#         #获取当前状态
+#         roll, roll_dot, H, H_dot, target_H = get_date()
+
+#         #当前状态
+#         x = np.array(
+#             [
+#                 roll,
+#                 roll_dot,
+#                 H,
+#                 H_dot,
+#             ],
+#             dtype=float,
+#         )
+
+#         # 目标状态
+#         x_ref = np.array(
+#             [
+#                 0.0,        # roll_ref
+#                 0.0,        # roll_dot_ref
+#                 target_H,   # H_ref
+#                 0.0,        # H_dot_ref
+#             ],
+#             dtype=float,
+#         )
+
+#         # 计算本周期左右腿实际支撑力
+#         F_left, F_right = mpc.solve_OSQP(
+#             x,
+#             x_ref,
+#         )
+
+#         # 发送回C板
+#         send_date(
+#             F_left,
+#             F_right,
+#         )
+
 

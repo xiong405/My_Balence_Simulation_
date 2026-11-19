@@ -272,11 +272,6 @@ def test_closed_loop(mpc):
         0.0,
     ])
 
-    mpc.u_previous = np.zeros(
-        mpc.nu,
-        dtype=float,
-    )
-
     for k in range(300):
 
         # MPC返回实际支撑力
@@ -332,6 +327,7 @@ if __name__ == "__main__":
         sample_time=0.01,
         Horizon=15,
     )
-    F_left,F_right = (mpc.test_osqp_end_to_end())
-    print(F_left,F_right)
+
+    # F_left,F_right = (mpc.test_osqp_end_to_end())
+    # print(F_left,F_right)
     test_closed_loop(mpc)

@@ -59,8 +59,10 @@ def get_leg_parameters(L0):
 def compute_AB(ll, lr, theta_lin=0.0):
     # 参数与当前 Webots 模型和 lagrange.py 保持一致。
     R_w, R_l = 0.060000003, 0.2286725
-    m_w, m_l, m_b = 0.175277, 0.582519, 3.908970
-    I_w, I_b, I_z = 0.0002687597, 0.008412125, 0.008735721
+    # m_w, m_l, m_b = 0.175277, 0.582519, 3.908970
+    # I_w, I_b, I_z = 0.0002687597, 0.008412125, 0.008735721
+    m_w, m_l, m_b = 0.175277, 0.582519, 10.7
+    I_w, I_b, I_z = 0.0002687597, 0.147851197008, 0.223981547398
     g = 9.81
 
     c_lin = math.cos(theta_lin)
@@ -211,8 +213,12 @@ def design_leso14(A, B, dt=0.003):
     )
     Ce = np.hstack([np.eye(STATE_DIM), np.zeros((STATE_DIM, DISTURBANCE_DIM))])
 
-    state_poles = np.clip(np.abs(np.linalg.eigvals(G)) * 0.4, 0.2, 0.95)  # 状态估计极点，极点模乘以0.4，让观测误差收敛得更快
-    observer_poles = np.concatenate([state_poles, np.full(DISTURBANCE_DIM, 0.985)])#状态估计极点和扰动估计极点0.985
+    state_poles = np.clip(
+        np.abs(np.linalg.eigvals(G)) * 0.4, 0.2, 0.95
+    )  # 状态估计极点，极点模乘以0.4，让观测误差收敛得更快
+    observer_poles = np.concatenate(
+        [state_poles, np.full(DISTURBANCE_DIM, 0.985)]
+    )  # 状态估计极点和扰动估计极点0.985
 
     L = scipy.signal.place_poles(Ae.T, Ce.T, observer_poles).gain_matrix.T  # 求L矩阵
     L = np.asarray(np.real_if_close(L), dtype=float)
@@ -337,8 +343,8 @@ if __name__ == "__main__":
     theta_lin = 0.0
     dt = 0.003
 
-    q_diag = [1000, 100, 1000, 100, 12000, 50, 12000, 50, 5000, 40]
-    r_diag = [60, 60, 1.5, 1.5]
+    q_diag = [1000, 100, 1000, 100, 8000, 20, 8000, 20, 15000, 40]
+    r_diag = [50, 50, 4, 4]
 
     coeffs = fit_coefficients(ll_grid, lr_grid, q_diag, r_diag, theta_lin, dt)
 
